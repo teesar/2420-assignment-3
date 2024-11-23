@@ -1,0 +1,8 @@
+[Unit]
+Description=Run generate_index every date at 05:00
+
+[Timer]
+OnCalendar=*-*-* 23:23
+
+[Install]
+WantedBy=timers.target
