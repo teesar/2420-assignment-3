@@ -1,4 +1,4 @@
-#The One Script#
+# The One Script
 This script will set up an nginx web server displaying a static html page containing:
 - Kernel Release
 - Operating System
@@ -8,7 +8,7 @@ This updates the first time the script is run, and then every day at 5 am.
 
 This script will also configure a ufw firewall only allowing http and ssh traffic from anywhere. (SSH rate limiting enabled)
 
-##Requirements##
+## Requirements
 * The script must be run with sudo or as root.
 
 Example: Running the script from within the same directory.
