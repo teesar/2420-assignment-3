@@ -9,6 +9,7 @@ mkdir /var/lib/webgen/bin
 cp "$PWD/generate_index" /var/lib/webgen/bin/generate_index
 mkdir /var/lib/webgen/HTML
 chown -R webgen:webgen /var/lib/webgen
+./generate_index
 cp "$PWD/generate_index.service" /etc/systemd/system/generate-index.service
 cp "$PWD/generate_index.timer" /etc/systemd/system/generate-index.timer
 cp "$PWD/nginx.conf" /etc/nginx/nginx.conf
@@ -23,7 +24,7 @@ ufw default allow outgoing
 ufw allow ssh
 ufw limit ssh
 ufw allow http
-ufw enable
+echo "y" | ufw enable
 
 
 systemctl daemon-reload
