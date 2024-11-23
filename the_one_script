@@ -23,6 +23,8 @@ mkdir /etc/nginx/sites-available
 mkdir /etc/nginx/sites-enabled
 cp "$dir/Data/system-info.conf" /etc/nginx/sites-available/system-info.conf
 ln -s /etc/nginx/sites-available/system-info.conf /etc/nginx/sites-enabled/system-info.conf
+systemctl enable --now /etc/systemd/system/generate-index.service
+systemctl enable --now /etc/systemd/system/generate-index.timer
 systemctl enable --now nginx
 systemctl enable --now ufw.service
 ufw default deny incoming
