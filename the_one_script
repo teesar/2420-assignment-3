@@ -5,24 +5,26 @@ if [ "$(id -u)" -ne 0 ]; then
   exit 1
 fi
 
+dir="$(dirname "$0")"
+
 pacman -Syu --noconfirm
 pacman -S nginx --noconfirm
 pacman -S ufw --noconfirm
 useradd -r -m -d /var/lib/webgen -s /usr/sbin/nologin webgen
 mkdir /var/lib/webgen/bin
-cp "$PWD/generate_index" /var/lib/webgen/bin/generate_index
+cp "$dir/Data/generate_index" /var/lib/webgen/bin/generate_index
 mkdir /var/lib/webgen/HTML
 chown -R webgen:webgen /var/lib/webgen
-./generate_index
-cp "$PWD/generate_index.service" /etc/systemd/system/generate-index.service
-cp "$PWD/generate_index.timer" /etc/systemd/system/generate-index.timer
-cp "$PWD/nginx.conf" /etc/nginx/nginx.conf
+"$dir/Data/generate_index"
+cp "$dir/Data/generate-index.service" /etc/systemd/system/generate-index.service
+cp "$dir/Data/generate-index.timer" /etc/systemd/system/generate-index.timer
+cp "$dir/Data/nginx.conf" /etc/nginx/nginx.conf
 mkdir /etc/nginx/sites-available 
 mkdir /etc/nginx/sites-enabled
-cp "$PWD/system-info.conf" /etc/nginx/sites-available/system-info.conf
+cp "$dir/Data/system-info.conf" /etc/nginx/sites-available/system-info.conf
 ln -s /etc/nginx/sites-available/system-info.conf /etc/nginx/sites-enabled/system-info.conf
 systemctl enable --now nginx
-systemctl enable --now ufw.service --noconfirm
+systemctl enable --now ufw.service
 ufw default deny incoming
 ufw default allow outgoing
 ufw allow ssh
