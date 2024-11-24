@@ -13,8 +13,8 @@ pacman -S ufw --noconfirm
 useradd -r -m -d /var/lib/webgen -s /usr/sbin/nologin webgen
 mkdir /var/lib/webgen/bin
 cp "$dir/Data/generate_index" /var/lib/webgen/bin/generate_index
-/var/lib/webgen/bin/generate_index
 mkdir /var/lib/webgen/HTML
+/var/lib/webgen/bin/generate_index
 chown -R webgen:webgen /var/lib/webgen
 chmod -R 777 /var/lib/webgen
 cp "$dir/Data/generate-index.service" /etc/systemd/system/generate-index.service
