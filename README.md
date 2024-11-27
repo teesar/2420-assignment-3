@@ -63,6 +63,7 @@ sudo ufw delete allow <port-or-service-here>
 sudo nginx -t
 ```
 
-* You were working with Kernel Release: 6.12.1-arch1-1 when writing this script.
+* When writing a script that moves a file into a new location and then attempts to run it, make sure to order the commands in your script properly to avoid wasting time wondering why the file isn't being run.
 
-* Side Note: When writing a script that moves a file into a new location, make sure to run that command before you try and run the file.
+* You were working with Kernel Release: 6.12.1-arch1-1 when writing this script.
+[![Great Success!](./Assets/great-success.png)]
