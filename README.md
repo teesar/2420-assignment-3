@@ -63,4 +63,6 @@ sudo ufw delete allow <port-or-service-here>
 sudo nginx -t
 ```
 
+* You were working with Kernel Release: 6.12.1-arch1-1 when writing this script.
+
 * Side Note: When writing a script that moves a file into a new location, make sure to run that command before you try and run the file.
