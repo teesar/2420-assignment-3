@@ -66,4 +66,5 @@ sudo nginx -t
 * When writing a script that moves a file into a new location and then attempts to run it, make sure to order the commands in your script properly to avoid wasting time wondering why the file isn't being run.
 
 * You were working with Kernel Release: 6.12.1-arch1-1 when writing this script.
-[![Great Success!](./Assets/great-success.png)]
+
+![Great Success!](./Assets/great-success.png)
