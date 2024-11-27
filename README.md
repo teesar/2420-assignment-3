@@ -34,7 +34,7 @@ sudo /home/arch/server-start/the_one_script
 
 ## General Notes From Development Process
 
-* The web server will be set up on port 80, the firewal will allow all outgoing traffic but deny all incoming except for ssh (limited) and http traffic. If these don't suit your purposes you will need to edit the server block in "system-info.conf" to switch the server port, and change the firefall commands in "the_one_script" (ufw allow <traffic type>).
+* The web server will be set up on port 80, the firewall will allow all outgoing traffic but deny all incoming except for ssh (limited) and http traffic. If these don't suit your purposes you will need to edit the server block in "system-info.conf" to switch the server port, and you may edit the ufw firewall commands in "the_one_script", or continue reading below for manual commands.
 
 * The timer that changes how often the index.html file is refreshed is in generate-index.timer, the OnCalendar setting of *-*-* 05:00 means it will run every day at 5am. This may be modified to your desired update frequency.
 
