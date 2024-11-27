@@ -41,7 +41,7 @@ The OnCalendar format is:
 ```
 * *-*-* *:*:*
 ```
-Where the first * signifies day of the week, *-*-* signifies year/month/date, and *:*:* signifies hours/minutes/seconds.
+Where the first portion signifies day of the week, second portion signifies year/month/date, and third portion signifies hours/minutes/seconds.
 You may leave out or use any combination of the 3 elements.
 To set a command to run every Friday at 5am:
 ```
